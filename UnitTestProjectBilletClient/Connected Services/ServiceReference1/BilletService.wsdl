@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BilletService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IBilletService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://billetwcfservice20170918031154.azurewebsites.net/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://billetwcfservice20170918031154.azurewebsites.net/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://billetwcfservice20170918031154.azurewebsites.net/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BilletWCFService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBilletService_GetPrisMCMedBrobizz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisMCMedBrobizz" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisMCMedBrobizz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisMCMedBrobizzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisMCUBrobizz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisMCUBrobizz" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisMCUBrobizz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisMCUBrobizzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisBilMedBrobizz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisBilMedBrobizz" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisBilMedBrobizz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisBilMedBrobizzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisBilUBrobizz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisBilUBrobizz" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetPrisBilUBrobizz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrisBilUBrobizzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IBilletService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBilletService">
+    <wsdl:operation name="GetPrisMCMedBrobizz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBilletService/GetPrisMCMedBrobizz" message="tns:IBilletService_GetPrisMCMedBrobizz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBilletService/GetPrisMCMedBrobizzResponse" message="tns:IBilletService_GetPrisMCMedBrobizz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisMCUBrobizz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBilletService/GetPrisMCUBrobizz" message="tns:IBilletService_GetPrisMCUBrobizz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBilletService/GetPrisMCUBrobizzResponse" message="tns:IBilletService_GetPrisMCUBrobizz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisBilMedBrobizz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBilletService/GetPrisBilMedBrobizz" message="tns:IBilletService_GetPrisBilMedBrobizz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBilletService/GetPrisBilMedBrobizzResponse" message="tns:IBilletService_GetPrisBilMedBrobizz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisBilUBrobizz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBilletService/GetPrisBilUBrobizz" message="tns:IBilletService_GetPrisBilUBrobizz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBilletService/GetPrisBilUBrobizzResponse" message="tns:IBilletService_GetPrisBilUBrobizz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBilletService/GetDataUsingDataContract" message="tns:IBilletService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBilletService/GetDataUsingDataContractResponse" message="tns:IBilletService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBilletService" type="tns:IBilletService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPrisMCMedBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisMCMedBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisMCUBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisMCUBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisBilMedBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisBilMedBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisBilUBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisBilUBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IBilletService" type="tns:IBilletService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IBilletService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPrisMCMedBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisMCMedBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisMCUBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisMCUBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisBilMedBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisBilMedBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrisBilUBrobizz">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetPrisBilUBrobizz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IBilletService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BilletService">
+    <wsdl:port name="BasicHttpBinding_IBilletService" binding="tns:BasicHttpBinding_IBilletService">
+      <soap:address location="http://billetwcfservice20170918031154.azurewebsites.net/Service1.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IBilletService" binding="tns:BasicHttpsBinding_IBilletService">
+      <soap:address location="https://billetwcfservice20170918031154.azurewebsites.net/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

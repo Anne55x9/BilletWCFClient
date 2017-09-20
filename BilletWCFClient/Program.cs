@@ -10,6 +10,15 @@ namespace BilletWCFClient
     {
         static void Main(string[] args)
         {
+
+            using(var client = new BilletReferenceService.BilletServiceClient("BasicHttpBinding_IBilletService"))
+            {
+                
+                Console.WriteLine(client.GetPrisBilMedBrobizz());
+
+                Console.ReadLine();
+            }
+
         }
     }
 }
